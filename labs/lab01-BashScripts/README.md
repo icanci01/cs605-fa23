@@ -128,7 +128,7 @@ Memcached consists of two components: the `Memcached client` and the `Memcached 
 Mutilate reports the latency (average, minimum, and various percentiles) for get and set commands, as well as achieved QPS and network goodput.
 
 <figure>
-  <p align="center"><img src="figures/mutilate-results.jpg"></p>
+  <p align="center"><img src="figures/mutilate-results.JPG"></p>
   <figcaption><p align="center">Figure. Example of Mutilate Output.</p></figcaption>
 </figure>
 
@@ -136,7 +136,7 @@ Mutilate reports the latency (average, minimum, and various percentiles) for get
 `Average Response Time` represents the average time required to serve a query(from the moment the client sends a request until it receives an answer). The average response time of each run is located in the mcpef file which contains the measurements reported by mutilate. 
 
 <figure>
-  <p align="center"><img src="figures/mutilate-average.jpg"></p>
+  <p align="center"><img src="figures/mutilate-average.JPG"></p>
   <figcaption><p align="center">Figure. Mutilate Average Response Time.</p></figcaption>
 </figure>
 
@@ -150,7 +150,7 @@ In this exercise you are asked to print the average response time of each run on
 `99th Tail Latency` represents the maximum latency for the fastest 99% of requests. The are different latency percentiles 50%, 90%, 95%, 99.9% etc but the most common one is the 99th percentile. It is an importantn metric to consider when evaluating the performance of large-scale interactive services such as websearch. This is because average only accounts for 50% of the client base quality of service which is a small percentage. 
 
 <figure>
-  <p align="center"><img src="figures/mutilate-99th.jpg"></p>
+  <p align="center"><img src="figures/mutilate-99th.JPG"></p>
   <figcaption><p align="center">Figure. Mutilate 99th Tail Latency.</p></figcaption>
 </figure>
 
@@ -165,7 +165,7 @@ In this exercise you are asked to print the 99th tail latency of each run on the
 Target QPS (queries per second) represents the requested rate at which the client sends queries to the server. Due to the fact that the client follows a distribution (outliers) the actual rate differs from the target QPS.
 
 <figure>
-  <p align="center"><img src="figures/mutilate-qps.jpg"></p>
+  <p align="center"><img src="figures/mutilate-qps.JPG"></p>
   <figcaption><p align="center">Figure. Mutilate Achieved QPS.</p></figcaption>
 </figure>
 
