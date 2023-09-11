@@ -128,7 +128,7 @@ Memcached consists of two components: the `Memcached client` and the `Memcached 
 Mutilate reports the latency (average, minimum, and various percentiles) for get and set commands, as well as achieved QPS and network goodput.
 
 <figure>
-  <p align="center"><img src="figures/mutilate-results.jpg"></p>
+  <p align="center"><img src="figures/mutilate-results.JPG"></p>
   <figcaption><p align="center">Figure. Example of Mutilate Output.</p></figcaption>
 </figure>
 
@@ -136,25 +136,25 @@ Mutilate reports the latency (average, minimum, and various percentiles) for get
 `Average Response Time` represents the average time required to serve a query(from the moment the client sends a request until it receives an answer). The average response time of each run is located in the mcpef file which contains the measurements reported by mutilate. 
 
 <figure>
-  <p align="center"><img src="figures/mutilate-average.jpg"></p>
+  <p align="center"><img src="figures/mutilate-average.JPG"></p>
   <figcaption><p align="center">Figure. Mutilate Average Response Time.</p></figcaption>
 </figure>
 
-In this exercise you are asked to print the average response time of each run on the same line separated by space. The results should be the following:
+In this exercise you are asked to print the average response time of each run on the same line separated by space. The result should be the following:
 ```
 133.5 88.0 132.0 107.8 110.8
 ```
 `Helpful commands: cat, grep, awk, tr`
 
 ### 99th Tail Latency
-`99th Tail Latency` represents the maximum latency for the fastest 99% of requests. The are different latency percentiles 50%, 90%, 95%, 99.9% etc but the most common one is the 99th percentile. It is an importantn metric to consider when evaluating the performance of large-scale interactive services such as websearch. This is because average only accounts for 50% of the client base quality of service which is a small percentage. 
+`99th Tail Latency` represents the maximum latency for the fastest 99% of requests. There are different latency percentiles 50%, 90%, 95%, 99.9% etc but the most common one is the 99th percentile. It is an importantn metric to consider when evaluating the performance of large-scale interactive services such as websearch. This is because average only accounts for 50% of the client base which is a small percentage. 
 
 <figure>
-  <p align="center"><img src="figures/mutilate-99th.jpg"></p>
+  <p align="center"><img src="figures/mutilate-99th.JPG"></p>
   <figcaption><p align="center">Figure. Mutilate 99th Tail Latency.</p></figcaption>
 </figure>
 
-In this exercise you are asked to print the 99th tail latency of each run on the same line separated by space. The results should be the following:
+In this exercise you are asked to print the 99th tail latency of each run on the same line separated by space. The result should be the following:
 ```
 231.1 156.0 232.6 227.8 226.1
 ```
@@ -162,23 +162,23 @@ In this exercise you are asked to print the 99th tail latency of each run on the
 
 ### Achieved QPS(queries per second)
 
-Target QPS (queries per second) represents the requested rate at which the client sends queries to the server. Due to the fact that the client follows a distribution (outliers) the actual rate differs from the target QPS.
+Target QPS (queries per second) represents the rate at which the client sends queries to the server. Due to the fact that the client follows a distribution (outliers) the actual rate differs from the target QPS.
 
 <figure>
-  <p align="center"><img src="figures/mutilate-qps.jpg"></p>
+  <p align="center"><img src="figures/mutilate-qps.JPG"></p>
   <figcaption><p align="center">Figure. Mutilate Achieved QPS.</p></figcaption>
 </figure>
 
-In this exercise you are asked to print by how much the actual QPS differs from the actual QPS(10K) for each run on the same line separated by space. The results should be the following:
+In this exercise, you are asked to print by how much the actual QPS differs from the target QPS(10K) for each run on the same line separated by space. The result should be the following:
 ```
 23.9 1.6 -5.3 7.5 -5.4
 ```
 `Helpful commands: cat, grep, awk, tr`
 
 ### Rapl Power Measurements
-`Intel's Running Average Power Limit (RAPL)` is a hardware feauture that among other things, it allows the monitoring of energy consumption across different domains of the CPU chip. This feauture was introduced in Intel's Sandy Bridge architecture and has evolved in the later versions of Intel's architecture. RAPL is based on a combination of models and real measurements for this reason the reported power conusmption has some error.
+`Intel's Running Average Power Limit (RAPL)` is a hardware feature that among other things, it allows the monitoring of energy consumption across different domains of the CPU chip. This feature was introduced in Intel's Sandy Bridge architecture and has evolved in the later versions of Intel's architecture. RAPL is based on a combination of models and real measurements for this reason the reported power consumption has some errors.
 
-In the provided dataset (small_dataset), there are also power measurements using RAPL counters for package-0, package-1 (dual-socket system) and dram-0, dram-1 under the memcached directory of each run. The format of the file is the following: timestamp, measurement in milliJoules. The difference between the second measurment and the first one is the energy the system consumed during the period between the first measurment and the second one. 
+In the provided dataset (small_dataset), there are also power measurements using RAPL counters for package-0, package-1 (dual-socket system) and dram-0, dram-1 under the memcached directory of each run. The format of the file is the following: timestamp, measurement in milliJoules. The difference between the second measurement and the first one is the energy the system consumes, during the period between the first measurement and the second one. 
 
 <figure>
   <p align="center"><img src="figures/memcached-rapl-pkg0.JPG"></p>
@@ -187,7 +187,7 @@ In the provided dataset (small_dataset), there are also power measurements using
 
 To convert the RAPL measurements into power consumption you have to perform the following transformation: (m2-m1/t2-t1) /1,000,000.
 
-In this exercise you are asked to print the power consumption of package-0 for each run on the same line separated by space. The results should be the following:
+In this exercise, you are asked to print the power consumption of package-0 for each run on the same line separated by space. The results should be the following:
 ```
 38.1555 38.3238 38.1687 38.1722 38.3208 
 ```
@@ -195,11 +195,11 @@ In this exercise you are asked to print the power consumption of package-0 for e
 
 ## Exercise: Bash Scripting
 
-For this set of exercises you will need to download the big_dataset from the Moodle page of CS605. The big_dataset contains measurements(average latency, tail latency, power measurements) of a Memcached workload for several query arrival rates (10K,50K,100K,200K,300K,400K,500K queries/second) for 5 runs. Aim of this exercise is to use the solutions of the previous exercise (Exercise: Unix Commands) to create a script.
+For this set of exercises, you will need to download the big_dataset from the Moodle page of CS605. The big_dataset contains measurements(average latency, tail latency, power measurements) of a Memcached workload for several query arrival rates (10K,50K,100K,200K,300K,400K,500K queries/second) for 5 runs. Aim of this exercise is to use the solutions of the previous exercise (Exercise: Unix Commands) to create a script.
 
 
 ### How to Test
-Under the src/ directory of lab1, there is a sceleton script that you will have to complete, in order to create a data parser script. In order to be able to test the script you have to do the following:
+Under the src/ directory of lab1, there is a Sceleton script that you will have to complete, in order to create a data parser script. In order to be able to test the script you have to do the following:
 
 * To run the script, you must first change its permissions to execute.
 ```
