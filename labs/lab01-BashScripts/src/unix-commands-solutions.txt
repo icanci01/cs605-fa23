@@ -1,0 +1,8 @@
+##################################################################
+#Please find below the solutions for the linux commands exercise:#
+##################################################################
+
+1. cat ./*/mcperf | grep -A1 "avg     std" | grep -v "avg" | grep read | awk '{print $2}' | tr "\n" " "
+2. cat ./*/mcperf | grep -A1 "avg     std" | grep -v "avg" | grep read | awk '{print $14}' | tr "\n" " "
+3. cat ./*/mcperf | grep "Total QPS" | awk -F"=" '{print $2}' | awk '{print 10000-$1}'
+4. awk -F',' 'BEGIN{p_time=0; p_power=0; c_time=0; c_power=0;}{p_power=c_power; p_time=c_time; c_power=$2; c_time=$1; if (NR % 3 == 0)print (c_power-p_power)/(c_time-p_time)/1000000}' ./*/memcached/package-0 | tr "\n" " "
