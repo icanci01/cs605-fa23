@@ -1,4 +1,4 @@
-# Lab 4: ChampSim
+# Lab 5: ChampSim
 The goal of this lab tutorial is to familiarize with the ChampSim simulator (https://github.com/ChampSim/ChampSim.git).
 
 ## ChampSim
