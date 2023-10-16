@@ -80,7 +80,7 @@ P-States are Performance States the core resides in while in C0 Core C-State. P-
 Under the src directory there is a power virus written in assembly. To compile use the following:
 
 ```
-gcc power_virus.s -o power virus
+gcc power_virus.s -o power_virus
 ```
 Answer the following questions. Questions 1 and 2 can be tested on the lab machines, question 3 is based on the dynamic power consumption equation. 
 
