@@ -1,4 +1,4 @@
-# Lab 6: Power
+# Lab 7: Power
 The goal of this lab tutorial is to familiarize with different aspects of power consumption and computer feautures that aim to save power during active/idle times.  
 
 
